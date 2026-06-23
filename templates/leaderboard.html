@@ -95,19 +95,21 @@ href="{{ url_for('static', filename='css/style.css') }}">
                 {% for team in teams %}
 
                 <tr>
+<td>
+{% if loop.index == 1 %}
+<div class="rank-shield gold">1</div>
 
-                    <td>
-    {% if loop.index == 1 %}
-        <div class="champion-rank">
-            👑🥇
-        </div>
-    {% elif loop.index == 2 %}
-        🥈
-    {% elif loop.index == 3 %}
-        🥉
-    {% else %}
-        #{{ loop.index }}
-    {% endif %}
+{% elif loop.index == 2 %}
+<div class="rank-shield silver">2</div>
+
+{% elif loop.index == 3 %}
+<div class="rank-shield bronze">3</div>
+
+{% else %}
+<div class="rank-shield normal">
+    {{ loop.index }}
+</div>
+{% endif %}
 </td>
 
                     <td>
