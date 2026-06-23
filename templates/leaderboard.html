@@ -111,19 +111,12 @@ href="{{ url_for('static', filename='css/style.css') }}">
 </td>
 
                     <td>
-
-                        {% if team.team_image %}
-
-                        <img src="{{ url_for('static', filename='uploads/' + team.team_image) }}"
-                             class="team-logo">
-
-                        {% else %}
-
-                        <img src="{{ url_for('static', filename='uploads/default.png') }}"
-                             class="team-logo">
-
-                        {% endif %}
-
+{% if team.team_image %}
+<img src="{{ url_for('static', filename='uploads/' + team.team_image) }}"
+     class="team-logo">
+{% else %}
+<span>📷</span>
+{% endif %}
                     </td>
 
                     <td>

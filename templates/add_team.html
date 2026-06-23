@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-
 <html lang="th">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Add Team | Esports Tournament</title>
 
-<title>Add Team | Tournament</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
 
 </head>
 
@@ -28,164 +22,164 @@
 
 <nav class="navbar navbar-dark shadow mb-4">
 
+    <div class="container">
 
-<div class="container">
-
-    <a class="navbar-brand text-warning fw-bold"
-       href="/">
-         TOURNAMENT
-    </a>
-
-    <div>
-
-        <a href="/"
-           class="btn btn-outline-light btn-sm">
-            Leaderboard
+        <a class="navbar-brand fw-bold"
+           href="/">
+            🏆 ESPORTS TOURNAMENT
         </a>
 
-        <a href="/dashboard"
-           class="btn btn-outline-warning btn-sm">
-            Dashboard
-        </a>
+        <div class="d-flex gap-2">
+
+            <a href="/"
+               class="btn btn-outline-light btn-sm">
+                🏆 Leaderboard
+            </a>
+
+            <a href="/dashboard"
+               class="btn btn-warning btn-sm">
+                📊 Dashboard
+            </a>
+
+        </div>
 
     </div>
-
-</div>
-
 
 </nav>
 
 <div class="container py-5">
 
+    <div class="text-center mb-5">
 
-<div class="text-center mb-5">
+        <h1 class="main-title">
+            ➕ ADD NEW TEAM
+        </h1>
 
-    <h1 class="main-title">
-        ADD NEW TEAM
-    </h1>
+        <p class="subtitle">
+            Tournament Registration System
+        </p>
 
-    <p class="subtitle">
-        Team Registration System
-    </p>
+    </div>
 
-</div>
+    <div class="row justify-content-center">
 
-<div class="row justify-content-center">
+        <div class="col-lg-8">
 
-    <div class="col-lg-8">
+            <div class="card shadow-lg">
 
-        <div class="card shadow-lg">
+                <div class="card-header py-3 text-center">
 
-            <div class="card-header py-3">
+                    <h3 class="mb-0">
+                        🎮 เพิ่มทีมแข่งขัน
+                    </h3>
 
-                <h3 class="mb-0">
-                    ➕ เพิ่มทีมแข่งขัน
-                </h3>
+                </div>
 
-            </div>
+                <div class="card-body p-4">
 
-            <div class="card-body p-4">
+                    <form method="POST"
+                          enctype="multipart/form-data">
 
-                <form method="POST"
-                      enctype="multipart/form-data">
+                        <div class="mb-3">
 
-                    <div class="mb-3">
+                            <label class="form-label">
+                                🖼 โลโก้ทีม
+                            </label>
 
-                        <label class="form-label">
-                            โลโก้ทีม
-                        </label>
+                            <input type="file"
+                                   name="team_image"
+                                   class="form-control">
 
-                        <input type="file"
-                               name="team_image"
-                               class="form-control">
+                        </div>
 
-                    </div>
+                        <div class="mb-3">
 
-                    <div class="mb-3">
+                            <label class="form-label">
+                                🏷 ชื่อทีม
+                            </label>
 
-                        <label class="form-label">
-                            ชื่อทีม
-                        </label>
+                            <input type="text"
+                                   name="team_name"
+                                   class="form-control"
+                                   placeholder="เช่น Buriram United Esports"
+                                   required>
 
-                        <input type="text"
-                               name="team_name"
-                               class="form-control"
-                               placeholder="เช่น Buriram United Esports"
-                               required>
+                        </div>
 
-                    </div>
+                        <div class="mb-3">
 
-                    <div class="mb-3">
+                            <label class="form-label">
+                                🎯 จำนวน Kill
+                            </label>
 
-                        <label class="form-label">
-                            จำนวน Kill
-                        </label>
+                            <input type="number"
+                                   name="kills"
+                                   class="form-control"
+                                   placeholder="0"
+                                   required>
 
-                        <input type="number"
-                               name="kills"
-                               class="form-control"
-                               placeholder="0"
-                               required>
+                        </div>
 
-                    </div>
+                        <div class="mb-3">
 
-                    <div class="mb-3">
+                            <label class="form-label">
+                                ⭐ คะแนนรวม
+                            </label>
 
-                        <label class="form-label">
-                            คะแนนรวม
-                        </label>
+                            <input type="number"
+                                   name="points"
+                                   class="form-control"
+                                   placeholder="0"
+                                   required>
 
-                        <input type="number"
-                               name="points"
-                               class="form-control"
-                               placeholder="0"
-                               required>
+                        </div>
 
-                    </div>
+                        <div class="mb-4">
 
-                    <div class="mb-4">
+                            <label class="form-label">
+                                🏆 รอบการแข่งขัน
+                            </label>
 
-                        <label class="form-label">
-                            รอบการแข่งขัน
-                        </label>
+                            <select name="round_name"
+                                    class="form-select">
 
-                        <select name="round_name"
-                                class="form-select">
+                                <option>Round 1</option>
+                                <option>Round 2</option>
+                                <option>Round 3</option>
+                                <option>Semi Final</option>
+                                <option>Grand Final</option>
 
-                            <option>Round 1</option>
-                            <option>Round 2</option>
-                            <option>Round 3</option>
-                            <option>Semi Final</option>
-                            <option>Grand Final</option>
+                            </select>
 
-                        </select>
+                        </div>
 
-                    </div>
+                        <div class="d-grid gap-2 d-md-flex">
 
-                    <button type="submit"
-                            class="btn btn-success btn-lg me-2">
+                            <button type="submit"
+                                    class="btn btn-success btn-lg">
 
-                        💾 บันทึกข้อมูล
+                                💾 บันทึกข้อมูล
 
-                    </button>
+                            </button>
 
-                    <a href="/"
-                       class="btn btn-secondary btn-lg">
+                            <a href="/"
+                               class="btn btn-secondary btn-lg">
 
-                        ↩ กลับหน้าหลัก
+                                ↩ กลับหน้าหลัก
 
-                    </a>
+                            </a>
 
-                </form>
+                        </div>
+
+                    </form>
+
+                </div>
 
             </div>
 
         </div>
 
     </div>
-
-</div>
-
 
 </div>
 

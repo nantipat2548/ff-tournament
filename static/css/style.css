@@ -403,3 +403,119 @@ border: 2px solid rgba(255,191,0,.2);
         transform:translateY(0);
     }
 }
+
+.main-title{
+    font-size:3rem;
+    font-weight:900;
+    color:#ffc107;
+
+    text-shadow:
+    0 0 15px rgba(255,193,7,.8),
+    0 0 35px rgba(255,193,7,.5);
+}
+
+.subtitle{
+    color:#ddd;
+    letter-spacing:2px;
+}
+
+.login-card{
+    border:2px solid rgba(255,193,7,.25);
+    box-shadow:
+    0 0 30px rgba(255,193,7,.2);
+}
+
+.card-header{
+    background:
+    linear-gradient(
+        90deg,
+        #ff9800,
+        #ffc107
+    );
+    color:black;
+    font-weight:800;
+}
+
+/* ================= DASHBOARD ================= */
+
+.number{
+    font-size:4rem;
+    font-weight:900;
+    color:#ffc107;
+    text-shadow:
+    0 0 15px rgba(255,193,7,.8);
+}
+
+/* ================= LOGIN PAGE ================= */
+
+.main-title{
+    font-size:3rem;
+    font-weight:900;
+    color:#ffc107;
+
+    text-shadow:
+    0 0 15px rgba(255,193,7,.8),
+    0 0 35px rgba(255,193,7,.5);
+}
+
+.subtitle{
+    color:#ddd;
+    letter-spacing:2px;
+}
+
+.login-card{
+    border:2px solid rgba(255,193,7,.25);
+    box-shadow:
+    0 0 30px rgba(255,193,7,.2);
+}
+
+/* ================= FORM LABEL ================= */
+
+.form-label{
+    color:#ffc107;
+    font-weight:700;
+}
+
+/* ================= BUTTON EFFECT ================= */
+
+.btn{
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+/* ================= CARD HEADER ================= */
+
+.card-header{
+    background:
+    linear-gradient(
+        90deg,
+        #ff9800,
+        #ffc107
+    ) !important;
+
+    color:black !important;
+    font-weight:800;
+    border:none;
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ffc107;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#ff9800;
+}

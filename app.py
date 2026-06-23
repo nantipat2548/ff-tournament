@@ -134,11 +134,17 @@ def dashboard():
         func.sum(Team.points)
     ).scalar() or 0
 
+    top_team = Team.query.order_by(
+    Team.points.desc(),
+    Team.kills.desc()
+).first()  
+
     return render_template(
         "dashboard.html",
         total_teams=total_teams,
         total_kills=total_kills,
-        total_points=total_points
+        total_points=total_points,
+        top_team=top_team
     )
 
 
@@ -221,22 +227,15 @@ def edit_team(id):
 @app.route("/delete/<int:id>")
 def delete_team(id):
 
+    if not session.get("admin"):
+        return redirect("/login")
+
     team = Team.query.get_or_404(id)
 
     db.session.delete(team)
     db.session.commit()
 
     return redirect("/")
-
-
-@app.route("/reset")
-def reset():
-
-    Team.query.delete()
-    db.session.commit()
-
-    return redirect("/")
-
 
 # =========================
 # ERROR PAGES
