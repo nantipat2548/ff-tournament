@@ -1,6 +1,6 @@
+
 from werkzeug.utils import secure_filename
 import os
-
 
 from flask import Flask, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
@@ -8,46 +8,78 @@ from sqlalchemy import func
 
 app = Flask(__name__)
 
-app.secret_key = "freefire2026"
+# =========================
+# CONFIG
+# =========================
 
-UPLOAD_FOLDER = "static/uploads"
-app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
-
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///tournament.db"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-
-db = SQLAlchemy(app)
-
-import os
+app.secret_key = os.getenv("SECRET_KEY", "freefire2026")
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
+# Upload Folder
 UPLOAD_FOLDER = os.path.join(BASE_DIR, "static", "uploads")
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+# PostgreSQL Render Database
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+if not DATABASE_URL:
+    raise RuntimeError("DATABASE_URL not found")
+
+if DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace(
+        "postgres://",
+        "postgresql://",
+        1
+    )
+
+app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+# Upload Limit
+app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024
+
+db = SQLAlchemy(app)
+
+# =========================
+# MODEL
+# =========================
 
 class Team(db.Model):
     id = db.Column(db.Integer, primary_key=True)
 
-    team_name = db.Column(db.String(100), nullable=False)
+    team_name = db.Column(
+        db.String(100),
+        nullable=False
+    )
 
-    kills = db.Column(db.Integer, default=0)
+    kills = db.Column(
+        db.Integer,
+        default=0
+    )
 
-    points = db.Column(db.Integer, default=0)
+    points = db.Column(
+        db.Integer,
+        default=0
+    )
 
     round_name = db.Column(
         db.String(50),
         default="Round 1"
     )
 
-    team_image = db.Column(db.String(255))
-
+    team_image = db.Column(
+        db.String(255)
+    )
 
 with app.app_context():
     db.create_all()
 
+# =========================
+# ROUTES
+# =========================
 
 @app.route("/")
 def leaderboard():
@@ -56,13 +88,6 @@ def leaderboard():
         Team.points.desc(),
         Team.kills.desc()
     ).all()
-
-    for team in teams:
-        print(
-            "TEAM =", team.team_name,
-            "KILLS =", team.kills,
-            "POINTS =", team.points
-        )
 
     return render_template(
         "leaderboard.html",
@@ -138,12 +163,12 @@ def add_team():
             )
 
         team = Team(
-    team_name=request.form["team_name"],
-    kills=int(request.form["kills"]),
-    points=int(request.form["points"]),
-    round_name=request.form["round_name"],
-    team_image=filename
-)
+            team_name=request.form["team_name"],
+            kills=int(request.form["kills"]),
+            points=int(request.form["points"]),
+            round_name=request.form["round_name"],
+            team_image=filename
+        )
 
         db.session.add(team)
         db.session.commit()
@@ -151,6 +176,7 @@ def add_team():
         return redirect("/")
 
     return render_template("add_team.html")
+
 
 @app.route("/edit/<int:id>", methods=["GET", "POST"])
 def edit_team(id):
@@ -162,6 +188,10 @@ def edit_team(id):
         team.team_name = request.form["team_name"]
         team.kills = int(request.form["kills"])
         team.points = int(request.form["points"])
+        team.round_name = request.form.get(
+            "round_name",
+            team.round_name
+        )
 
         image = request.files.get("team_image")
 
@@ -207,9 +237,32 @@ def reset():
 
     return redirect("/")
 
-print("BASE_DIR =", BASE_DIR)
-print("UPLOAD_FOLDER =", UPLOAD_FOLDER)
+
+# =========================
+# ERROR PAGES
+# =========================
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return "<h1>404 Not Found</h1>", 404
+
+
+@app.errorhandler(500)
+def server_error(error):
+    return "<h1>500 Internal Server Error</h1>", 500
+
+
+# =========================
+# RUN APP
+# =========================
 
 if __name__ == "__main__":
 
-    app.run(debug=True)
+    print("BASE_DIR =", BASE_DIR)
+    print("UPLOAD_FOLDER =", UPLOAD_FOLDER)
+
+    app.run(
+        host="0.0.0.0",
+        port=5000,
+        debug=True
+    )
