@@ -291,3 +291,84 @@ body{
 }
 
 }
+
+/* ================= FREE FIRE TABLE ================= */
+
+.table tbody td{
+    color:#111 !important;
+}
+
+.team-card,
+.team-card strong{
+
+    font-family:'Teko',sans-serif;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    color:#111 !important;
+
+    text-transform:uppercase;
+}
+
+.table tbody td:nth-child(4),
+.table tbody td:nth-child(5){
+
+    font-family:'Teko',sans-serif;
+
+    font-size:2.3rem;
+
+    font-weight:700;
+
+    color:#111 !important;
+}
+
+.table thead th{
+
+    font-family:'Teko',sans-serif;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+.hero h1{
+
+    font-size:5rem;
+}
+
+.team-logo{
+
+    width:80px;
+    height:80px;
+
+    border-radius:0;
+
+    border:2px solid #ffcc00;
+}
+
+.leaderboard-card{
+
+    border:3px solid #ffcc00;
+
+    box-shadow:
+    0 0 25px rgba(255,204,0,.25);
+}
+
+.team-card,
+.team-card strong{
+    display:block !important;
+    color:#000 !important;
+    opacity:1 !important;
+    visibility:visible !important;
+
+    font-family:'Teko',sans-serif;
+    font-size:2rem;
+    font-weight:700;
+    text-transform:uppercase;
+}
