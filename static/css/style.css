@@ -49,16 +49,16 @@ body{
 
 .hero h1{
     font-family:'Teko',sans-serif;
-    font-size:6rem;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:#ffe600;
+    font-size:8rem;
+    font-weight:700;
+    letter-spacing:2px;
+}
 
     text-shadow:
     0 0 10px #ffcc00,
     0 0 20px #ffcc00,
     0 0 40px rgba(255,204,0,.5);
-}
+
 
 .hero p{
     font-size:1.2rem;
