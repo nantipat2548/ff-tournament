@@ -519,3 +519,182 @@ border: 2px solid rgba(255,191,0,.2);
 ::-webkit-scrollbar-thumb:hover{
     background:#ff9800;
 }
+
+/* ======================================
+   FREE FIRE TOURNAMENT STYLE
+====================================== */
+
+.hero h1{
+    font-size:5rem;
+    font-weight:900;
+    text-transform:uppercase;
+    color:#ffe600;
+
+    letter-spacing:3px;
+
+    text-shadow:
+    0 0 5px #ffe600,
+    0 0 15px rgba(255,230,0,.7);
+}
+
+.hero p{
+    color:#d1d5db;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+/* กล่องหลัก */
+
+.leaderboard-card{
+    background:rgba(0,0,0,.88);
+
+    border-top:4px solid #ffe600;
+
+    border-radius:0;
+
+    box-shadow:none;
+}
+
+/* หัวตาราง */
+
+.table thead tr{
+    background:
+    linear-gradient(
+        180deg,
+        #ffe600,
+        #c9a300
+    );
+}
+
+.table thead th{
+    color:#000 !important;
+    font-weight:900;
+    text-transform:uppercase;
+    border-right:1px solid rgba(0,0,0,.25);
+}
+
+/* แถว */
+
+.table tbody tr{
+    background:rgba(255,255,255,.02);
+}
+
+.table tbody tr:hover{
+    background:rgba(255,230,0,.08);
+}
+
+/* ตัวหนังสือ */
+
+.table td{
+    color:#fff !important;
+    font-weight:700;
+}
+
+/* TEAM */
+
+.team-card{
+    background:none;
+    border:none;
+    box-shadow:none;
+    padding:0;
+}
+
+.team-card strong{
+    color:#ffe600;
+    font-size:1.2rem;
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+/* POINT */
+
+.table tbody td:nth-child(5){
+    color:#ffe600 !important;
+    font-size:2rem;
+    font-weight:900;
+}
+
+/* KILL */
+
+.table tbody td:nth-child(4){
+    color:#ffffff !important;
+    font-size:1.4rem;
+}
+
+/* TOP 1 */
+
+.table tbody tr:nth-child(1){
+    background:
+    linear-gradient(
+        90deg,
+        rgba(255,230,0,.22),
+        rgba(255,230,0,.05)
+    );
+
+    animation:none;
+}
+
+.table tbody tr:nth-child(1) td{
+    color:#ffe600 !important;
+}
+
+/* Navbar */
+
+.navbar{
+    background:#050505 !important;
+    border-bottom:3px solid #ffe600;
+}
+
+.navbar-brand{
+    color:#ffe600 !important;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+/* ปุ่ม */
+
+.btn-success,
+.btn-warning{
+    background:#ffe600;
+    border:none;
+    color:#000;
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+.btn-success:hover,
+.btn-warning:hover{
+    background:#fff200;
+    color:#000;
+}
+
+/* Dashboard */
+
+.number{
+    color:#ffe600;
+    text-shadow:none;
+}
+
+/* Login */
+
+.card{
+    background:rgba(0,0,0,.88);
+    border:1px solid rgba(255,230,0,.25);
+}
+
+.card-header{
+    background:
+    linear-gradient(
+        180deg,
+        #ffe600,
+        #d4aa00
+    ) !important;
+
+    color:#000 !important;
+}
+
+.main-title{
+    color:#ffe600;
+    text-transform:uppercase;
+    letter-spacing:3px;
+}
