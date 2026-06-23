@@ -89,6 +89,13 @@ def leaderboard():
         Team.kills.desc()
     ).all()
 
+    print("========== TEAMS ==========")
+
+    for t in teams:
+        print(
+            f"ID={t.id} TEAM={t.team_name} KILLS={t.kills} POINTS={t.points}"
+        )
+
     return render_template(
         "leaderboard.html",
         teams=teams
