@@ -135,9 +135,11 @@ padding:18px;
 }
 
 .table td{
-padding:16px;
+font-family:'Teko',sans-serif;
+font-size:2rem;
+font-weight:700;
 vertical-align:middle;
-border-color:rgba(255,255,255,.08);
+text-align:center;
 }
 
 .table tbody tr{
@@ -158,6 +160,8 @@ linear-gradient(
 rgba(255,215,0,.25),
 rgba(255,215,0,.10)
 );
+
+transform:scale(1.01);
 
 box-shadow:
 inset 0 0 25px rgba(255,215,0,.3);
@@ -188,8 +192,9 @@ rgba(205,127,50,.05)
 /* RANK */
 
 .rank-box{
-width:80px;
-height:80px;
+width:90px;
+height:90px;
+
 margin:auto;
 
 display:flex;
@@ -197,38 +202,70 @@ align-items:center;
 justify-content:center;
 
 font-family:'Teko',sans-serif;
-font-size:3rem;
+font-size:3.5rem;
 font-weight:700;
 
-border-radius:15px;
+clip-path:polygon(
+50% 0%,
+95% 25%,
+95% 75%,
+50% 100%,
+5% 75%,
+5% 25%
+);
+
+box-shadow:0 0 20px rgba(255,255,255,.2);
 }
 
 .rank-1{
-background:linear-gradient(#fff4a3,#ffcc00);
+background:linear-gradient(
+180deg,
+#fff7a8,
+#ffcc00,
+#ff9900
+);
+
 color:#000;
+
+box-shadow:
+0 0 20px #ffcc00,
+0 0 40px rgba(255,204,0,.5);
 }
 
 .rank-2{
-background:linear-gradient(#ffffff,#cfcfcf);
+background:linear-gradient(
+180deg,
+#ffffff,
+#d9d9d9,
+#a9b2b9
+);
+
 color:#000;
 }
 
 .rank-3{
-background:linear-gradient(#ffcb8a,#c06b14);
+background:linear-gradient(
+180deg,
+#ffcf8c,
+#d48332,
+#a65c13
+);
+
 color:#fff;
 }
 
 .rank-normal{
-background:#333;
-color:#fff;
+background:#2d2d2d;
+color:white;
 }
-
 /* TEAM */
 
 .team-card{
-font-size:1.3rem;
+font-family:'Teko',sans-serif;
+font-size:3rem;
 font-weight:700;
-color:white;
+letter-spacing:1px;
+color:#111;
 }
 
 /* LOGO */
