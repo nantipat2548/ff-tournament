@@ -430,17 +430,18 @@ color:#ffffff !important;
 /* TOP 5 */
 
 .top-score{
-color:#ffd700;
-
+color:#ffcc00;
+text-shadow:none;
+}
 text-shadow:
 0 0 5px rgba(255,215,0,.5),
 0 0 15px rgba(255,215,0,.4);
-}
+
 
 /* อันดับอื่น */
 
 .normal-score{
-color:#111;
+color:#fff;
 }
 
 /* =========================
