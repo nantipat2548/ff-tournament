@@ -119,48 +119,35 @@
                     {% endif %}
 
                 </td>
- <td>
-<div class="team-card
-{% if loop.index <= 5 %}
-top-team
-{% endif %}
-">
-{{ team.team_name }}
-</div>
-</td>
-                </td><div class="team-card">
 
-                <td class="kills-cell
-{% if loop.index <= 5 %}
-top-score
-{% else %}
-normal-score
-{% endif %}
-">
-{{ team.kills }}
+<td>
+    <div class="team-card {% if loop.index <= 5 %}top-team{% endif %}">
+        {{ team.team_name }}
+    </div>
 </td>
 
-                <td class="points-cell
-{% if loop.index <= 5 %}
-top-score
-{% else %}
-normal-score
-{% endif %}
-">
-{{ team.points }}
+<td class="kills-cell {% if loop.index <= 5 %}top-score{% else %}normal-score{% endif %}">
+    {{ team.kills }}
 </td>
-                    <a href="/edit/{{ team.id }}"
-                       class="btn btn-warning btn-sm">
-                        Edit
-                    </a>
 
-                    <a href="/delete/{{ team.id }}"
-                       class="btn btn-danger btn-sm"
-                       onclick="return confirm('ลบทีมนี้หรือไม่?')">
-                        Delete
-                    </a>
+<td class="points-cell {% if loop.index <= 5 %}top-score{% else %}normal-score{% endif %}">
+    {{ team.points }}
+</td>
 
-                </td>
+<td>
+
+    <a href="/edit/{{ team.id }}"
+       class="btn btn-warning btn-sm">
+        Edit
+    </a>
+
+    <a href="/delete/{{ team.id }}"
+       class="btn btn-danger btn-sm"
+       onclick="return confirm('ลบทีมนี้หรือไม่?')">
+        Delete
+    </a>
+
+</td>
 
             </tr>
 
@@ -177,7 +164,7 @@ normal-score
 <div class="footer">
     ESPORTS TOURNAMENT © 2026
 </div>
-```
+
 
 </div>
 
