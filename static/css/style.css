@@ -239,7 +239,7 @@ background:linear-gradient(
 #a9b2b9
 );
 
-color:#000;
+color:#000000;
 }
 
 .rank-3{
@@ -406,23 +406,25 @@ font-size:3rem;
 ========================= */
 
 .top-team{
-color:#ffd700 !important;
-
-text-shadow:
-0 0 5px rgba(255,215,0,.5),
-0 0 15px rgba(255,215,0,.4);
+color:#ffcc00;
+text-shadow:none;
 }
-
 /* =========================
    KILLS / POINTS
 ========================= */
-
 .kills-cell,
 .points-cell{
 font-family:'Teko',sans-serif;
 font-size:3rem;
 font-weight:700;
-line-height:1;
+}
+
+.top-score{
+color:#ffcc00 !important;
+}
+
+.normal-score{
+color:#ffffff !important;
 }
 
 /* TOP 5 */
