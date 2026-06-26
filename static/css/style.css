@@ -420,9 +420,9 @@ font-weight:700;
 }
 
 .top-score{
-color:#ffcc00 !important;
+color:#ffcc00;
+text-shadow:none;
 }
-
 .normal-score{
 color:#ffffff !important;
 }
