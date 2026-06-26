@@ -139,7 +139,6 @@ font-family:'Teko',sans-serif;
 font-size:2rem;
 font-weight:700;
 vertical-align:middle;
-text-align:center;
 }
 
 .table tbody tr{
@@ -262,10 +261,10 @@ color:white;
 
 .team-card{
 font-family:'Teko',sans-serif;
-font-size:3rem;
+font-size:3.5rem;
 font-weight:700;
 letter-spacing:1px;
-color:#111;
+text-transform:uppercase;
 }
 
 /* LOGO */
@@ -400,4 +399,84 @@ font-size:4rem;
 font-size:3rem;
 }
 
+}
+
+/* =========================
+   TEAM TOP 5
+========================= */
+
+.top-team{
+color:#ffd700 !important;
+
+text-shadow:
+0 0 5px rgba(255,215,0,.5),
+0 0 15px rgba(255,215,0,.4);
+}
+
+/* =========================
+   KILLS / POINTS
+========================= */
+
+.kills-cell,
+.points-cell{
+font-family:'Teko',sans-serif;
+font-size:3rem;
+font-weight:700;
+line-height:1;
+}
+
+/* TOP 5 */
+
+.top-score{
+color:#ffd700;
+
+text-shadow:
+0 0 5px rgba(255,215,0,.5),
+0 0 15px rgba(255,215,0,.4);
+}
+
+/* อันดับอื่น */
+
+.normal-score{
+color:#111;
+}
+
+/* =========================
+   TEAM TOP 5
+========================= */
+
+.top-team{
+color:#ffd700 !important;
+
+text-shadow:
+0 0 5px rgba(255,215,0,.5),
+0 0 15px rgba(255,215,0,.4);
+}
+
+/* =========================
+   KILLS / POINTS
+========================= */
+
+.kills-cell,
+.points-cell{
+font-family:'Teko',sans-serif;
+font-size:3rem;
+font-weight:700;
+line-height:1;
+}
+
+/* TOP 5 */
+
+.top-score{
+color:#ffd700;
+
+text-shadow:
+0 0 5px rgba(255,215,0,.5),
+0 0 15px rgba(255,215,0,.4);
+}
+
+/* อันดับอื่น */
+
+.normal-score{
+color:#111;
 }
